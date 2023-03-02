@@ -87,7 +87,7 @@ export default function CreateExam() {
                 value={i}
                 className="flex justify-between items-center align-middle mb-5 hover:text-blue-600 border-b border-black"
                 key={i}
-                onChange={() => {}}
+                onChange={() => {console.log(1234)}}
               >
                 {row.name} -{row.specialty} - الفرقه :
                 {row.year === "1" && "الأولى"}
