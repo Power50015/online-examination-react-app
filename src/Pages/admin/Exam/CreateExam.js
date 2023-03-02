@@ -20,6 +20,20 @@ export default function CreateExam() {
     fetchPost();
   }, []);
 
+  const [selectedSubjectData, setSelectedSubjectData] = useState({
+    name: null,
+    specialty: null,
+    year: null,
+  });
+
+  function selectSubject(name, specialty, year) {
+    setSelectedSubjectData({
+      name: name,
+      specialty: specialty,
+      year: year,
+    });
+  }
+
   const [questionData, setQuestionData] = useState([]);
 
   function removeQuestion(i) {
@@ -87,7 +101,9 @@ export default function CreateExam() {
                 value={i}
                 className="flex justify-between items-center align-middle mb-5 hover:text-blue-600 border-b border-black"
                 key={i}
-                onChange={() => {console.log(1234)}}
+                onChange={() => {
+                  selectSubject(row.name, row.specialty, row.year);
+                }}
               >
                 {row.name} -{row.specialty} - الفرقه :
                 {row.year === "1" && "الأولى"}
@@ -100,10 +116,16 @@ export default function CreateExam() {
         </div>
         <div className="flex justify-between mt-4">
           <h4 className="text-lg">
-            الشعبه : <span> نظم و معلومات</span>
+            الشعبه : <span> {selectedSubjectData.specialty}</span>
           </h4>
           <h4 className="text-lg">
-            الفرقه : <span> الأولى</span>
+            الفرقه :
+            <span>
+              {selectedSubjectData.year === "1" && "الأولى"}
+              {selectedSubjectData.year === "2" && "الثانيه"}
+              {selectedSubjectData.year === "3" && "الثالثه"}
+              {selectedSubjectData.year === "4" && "الرابعه"}
+            </span>
           </h4>
           <h4 className="text-lg font-bold text-blue-700">
             إجمالى الدرجات : <span> {totalScore()}</span>
