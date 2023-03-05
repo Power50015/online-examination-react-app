@@ -19,6 +19,7 @@ import CreateSubject from "./Pages/admin/Subject/CreateSubject";
 import Exams from "./Pages/admin/Exam/Exams";
 import CreateExam from "./Pages/admin/Exam/CreateExam";
 import ReadExam from "./Pages/admin/Exam/ReadExam";
+import UpdateExam from "./Pages/admin/Exam/UpdateExam";
 
 const router = createBrowserRouter([
   {
@@ -78,8 +79,12 @@ const router = createBrowserRouter([
     element: <CreateExam />,
   },
   {
-    path: "/exam/:stuId",
+    path: "/exam/:examId",
     element: <ReadExam />,
+  },
+  {
+    path: "/update-exam/:examId",
+    element: <UpdateExam />,
   },
 ]);
 

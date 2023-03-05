@@ -1,20 +1,21 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDocs,
   getFirestore,
+  query,
   updateDoc,
+  where,
 } from "firebase/firestore";
 import { React, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
-export default function CreateExam() {
+export default function UpdateExam() {
   const db = getFirestore();
+  const { examId } = useParams();
   let history = useNavigate();
-
-
-  const [subjectData, setSubjectData] = useState([]);
 
   const [questionData, setQuestionData] = useState([]);
 
@@ -25,23 +26,34 @@ export default function CreateExam() {
     year: null,
   });
 
+  const fetchQuestion = async () => {
+    await getDocs(
+      query(collection(db, "questions"), where("subjecId", "==", examId))
+    ).then((querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setQuestionData(newData);
+    });
+  };
+
   const fetchSub = async () => {
-    await getDocs(collection(db, "subjects")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => {
-        var flag = !doc.data().exam;
-        if (flag) {
-          return {
-            id: doc.id,
-            ...doc.data(),
-          };
-        }
+    const q = query(collection(db, "exams"), where("subjecId", "==", examId));
+    const docs = await getDocs(q);
+    docs.forEach((doc) => {
+      setSelectedSubjectData({
+        index: doc.id,
+        name: doc.data().subjectName,
+        specialty: doc.data().subjectSpecialty,
+        year: doc.data().subjectYear,
       });
-      setSubjectData(newData);
     });
   };
 
   useEffect(() => {
     fetchSub();
+    fetchQuestion();
   }, []);
 
   function isNumeric(str) {
@@ -83,15 +95,6 @@ export default function CreateExam() {
     setQuestionData([...tempData]);
   }
 
-  function selectSubject(e) {
-    setSelectedSubjectData({
-      id: subjectData[e.target.value].id,
-      name: subjectData[e.target.value].name,
-      specialty: subjectData[e.target.value].specialty,
-      year: subjectData[e.target.value].year,
-    });
-  }
-
   function removeQuestion(i) {
     setQuestionData(
       questionData.filter((x, y) => {
@@ -107,7 +110,7 @@ export default function CreateExam() {
         q: "",
         score: 10,
         asn: ["", "", "", ""],
-        trueAns: "",
+        trueAns: 0,
       },
     ]);
     setTimeout(() => {
@@ -127,38 +130,24 @@ export default function CreateExam() {
   };
 
   // Add Question
+  async function saveExam() {
+    await getDocs(
+      query(collection(db, "questions"), where("subjecId", "==", examId))
+    ).then((querySnapshot) => {
+      querySnapshot.docs.map((docD) =>
+        deleteDoc(doc(db, "questions", docD.id))
+      );
+    });
 
-  function saveExam() {
-    const db = getFirestore(); // initialize Firestore
-
-    updateDoc(doc(db, "subjects", selectedSubjectData.id), {
-      name: selectedSubjectData.name,
-      specialty: selectedSubjectData.specialty,
-      year: selectedSubjectData.year,
-      exam: true,
-    })
-      .then(async () => {
-        await addDoc(collection(db, "exams"), {
-          subjecId: selectedSubjectData.id,
-          subjectName: selectedSubjectData.name,
-          subjectSpecialty: selectedSubjectData.specialty,
-          subjectYear: selectedSubjectData.year,
-          totalScore: totalScore(),
-        }).then((res) => {
-          questionData.map(async (item) => {
-            await addDoc(collection(db, "questions"), {
-              q: item.q,
-              score: item.score,
-              asn: item.asn,
-              trueAns: item.trueAns,
-              subjecId: selectedSubjectData.id,
-            }).then(() => history("/exams"));
-          });
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    questionData.map(async (item) => {
+      await addDoc(collection(db, "questions"), {
+        q: item.q,
+        score: item.score,
+        asn: item.asn,
+        trueAns: item.trueAns,
+        subjecId: examId,
+      }).then(() => history("/exams"));
+    });
   }
 
   return (
@@ -167,50 +156,10 @@ export default function CreateExam() {
         عمل إمتحان
       </h2>
       <div className="w-full">
-        <div>
-          المادة
-          <select
-            name="subject"
-            className="
-                            form-control
-                            block
-                            w-full
-                            px-3
-                            py-1.5
-                            text-base
-                            font-normal
-                            text-gray-700
-                            bg-white bg-clip-padding
-                            border border-solid border-gray-300
-                            rounded
-                            transition
-                            ease-in-out
-                            m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                          "
-            value={setQuestionData.index}
-            onChange={selectSubject}
-          >
-            <option value={null}></option>
-            {subjectData?.map(
-              (row, i) =>
-                row && (
-                  <option
-                    value={i}
-                    className="flex justify-between items-center align-middle mb-5 hover:text-blue-600 border-b border-black"
-                    key={i}
-                  >
-                    {row.name} -{row.specialty} - الفرقه :
-                    {row.year === "1" && "الأولى"}
-                    {row.year === "2" && "الثانيه"}
-                    {row.year === "3" && "الثالثه"}
-                    {row.year === "4" && "الرابعه"}
-                  </option>
-                )
-            )}
-          </select>
-        </div>
         <div className="flex justify-between mt-4">
+          <h4 className="text-lg">
+            المادة : <span> {selectedSubjectData.name}</span>
+          </h4>
           <h4 className="text-lg">
             الشعبه : <span> {selectedSubjectData.specialty}</span>
           </h4>
@@ -279,6 +228,7 @@ export default function CreateExam() {
                     type="radio"
                     name={`radio` + i}
                     value={i2}
+                    checked={i2 === row.trueAns * 1}
                     onChange={(e) => handleInputTrueAns(e, i, i2)}
                   />
 

@@ -8,6 +8,7 @@ export default function CreateSubject() {
     name: "",
     specialty: "نظم و معلومات",
     year: "1",
+    exam: false,
   });
 
   function handleInput(e) {

@@ -1,11 +1,29 @@
-import React from "react";
+import {
+  collection,
+  getCountFromServer,
+  getFirestore,
+} from "firebase/firestore";
+import { React, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ExamsBox() {
+  const db = getFirestore();
+  const [count, setCount] = useState();
+  useEffect(() => {
+    countData();
+  }, []);
+
+  async function countData() {
+    const coll = collection(db, "exams");
+    const snapshot = await getCountFromServer(coll);
+    setCount(snapshot.data().count);
+    return count;
+  }
+
   return (
     <div className="bg-[#09103a] text-white px-4 pb-4 rounded-lg mb-4">
       <div className="flex justify-between items-center">
-        <h2 className="text-[#3281c0] font-bold text-5xl">25</h2>
+        <h2 className="text-[#3281c0] font-bold text-5xl">{count}</h2>
         <div className="my-5 text-center">
           <i className="fa-regular fa-copy text-7xl"></i>
         </div>
