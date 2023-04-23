@@ -26,12 +26,12 @@ export default function Exams() {
       <div className="w-full">
         {tabData?.map((row, i) => (
           <div
-            className="flex justify-between items-center align-middle py-3 hover:text-blue-600  border-b border-black"
+            className="flex justify-between items-center align-middle py-3 hover:text-green-600  border-b border-black"
             key={i}
           >
             <Link
               to={`/exam/${row.subjecId}`}
-              className="w-[85%] flex justify-between items-center align-middle hover:text-blue-600 "
+              className="w-[85%] flex justify-between items-center align-middle hover:text-green-600 "
             >
               <h2 className="text-2xl	 font-black	">المادة : {row.subjectName}</h2>
               <h2 className="text-2xl	 font-black	">الشعبه : {row.subjectSpecialty}</h2>
@@ -45,7 +45,7 @@ export default function Exams() {
             </Link>
             <Link
               to={"/update-exam/" + row.subjecId}
-              className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+              className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
             >
               تعديل البيانات
             </Link>

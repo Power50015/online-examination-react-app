@@ -49,7 +49,7 @@ export default function Navbar() {
             {isLoading ? (
               isLogin ? (
                 <button
-                  className="rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+                  className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
                   onClick={logout}
                 >
                   تسجيل الخروج
@@ -57,7 +57,7 @@ export default function Navbar() {
               ) : (
                 <a
                   href="/login"
-                  className="rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+                  className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
                 >
                   تسجيل الدخول
                 </a>

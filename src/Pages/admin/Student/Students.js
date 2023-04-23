@@ -25,18 +25,18 @@ export default function Students() {
       <div className="w-full">
         {tabData?.map((row, i) => (
           <div
-            className="flex justify-between items-center align-middle py-3 hover:text-blue-600  border-b border-black"
+            className="flex justify-between items-center align-middle py-3 hover:text-green-600  border-b border-black"
             key={i}
           >
             <Link
               to={`/student/${row.uid}`}
-              className="w-[85%] flex justify-between items-center align-middle hover:text-blue-600 "
+              className="w-[85%] flex justify-between items-center align-middle hover:text-green-600 "
             >
               <img
                 src={row.photo}
                 width="100"
                 height="100"
-                className="rounded-full border-4 border-[#09103a] w-[100px] h-[100px]"
+                className="rounded-full border-4 border-[#093a19] w-[100px] h-[100px]"
                 alt=""
               />
               <h2 className="text-2xl	 font-black	">{row.name}</h2>
@@ -51,7 +51,7 @@ export default function Students() {
             </Link>
             <Link
               to={"/update-students/" + row.uid}
-              className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+              className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
             >
               تعديل البيانات
             </Link>

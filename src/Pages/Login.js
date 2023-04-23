@@ -49,7 +49,7 @@ export default function Login() {
   return (
     <div className="container mx-auto mt-4 flex justify-center flex-col	items-center">
       <div className="text-right w-full my-5">
-        <h2 className="text-[#3281c0] font-bold text-3xl">تسجيل الدخول</h2>
+        <h2 className="text-[#28ff6e] font-bold text-3xl">تسجيل الدخول</h2>
       </div>
       <div className="btns flex justify-center mb-5">
         <div
@@ -57,8 +57,8 @@ export default function Login() {
           btn
           mx-3
           text-lg
-          font-bold px-5 cursor-pointer rounded-lg py-2 border-2 border-[#3281c0] bg-[#09103a]
-          ${userType === "student" ? "text-[#3281c0]" : "text-white"}
+          font-bold px-5 cursor-pointer rounded-lg py-2 border-2 border-[#28ff6e] bg-[#093a19]
+          ${userType === "student" ? "text-[#28ff6e]" : "text-white"}
            duration-300`}
           onClick={() => {
             setUserType("student");
@@ -71,8 +71,8 @@ export default function Login() {
           btn
           mx-3
           text-lg
-          font-bold px-5 cursor-pointer rounded-lg py-2 border-2 border-[#3281c0] bg-[#09103a]
-          ${userType === "admin" ? "text-[#3281c0]" : "text-white"}
+          font-bold px-5 cursor-pointer rounded-lg py-2 border-2 border-[#28ff6e] bg-[#093a19]
+          ${userType === "admin" ? "text-[#28ff6e]" : "text-white"}
            duration-300`}
           onClick={() => {
             setUserType("admin");
@@ -81,14 +81,14 @@ export default function Login() {
           شئون الطلبة
         </div>
       </div>
-      <div className="FormContainer bg-[#DFDFDF] border-[#09103A] border-2 border-solid	w-1/2 rounded-lg">
-        <div className="flex justify-center items-center bg-[#09103A] py-4">
+      <div className="FormContainer bg-[#DFDFDF] border-[#093a19] border-2 border-solid	w-1/2 rounded-lg">
+        <div className="flex justify-center items-center bg-[#093a19] py-4">
           <Link to="/">
             <img src={logo} alt="logo" width="150" />
           </Link>
         </div>
         <div className="form px-3">
-          <h2 className="text-[#09103A] text-center my-5  font-bold text-2xl">
+          <h2 className="text-[#093a19] text-center my-5  font-bold text-2xl">
             تسجيل الدخول إلى حسابك
           </h2>
           <form onSubmit={handleForm}>
@@ -114,7 +114,7 @@ export default function Login() {
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                           "
                 value={form.email}
                 onChange={handleInput}
@@ -145,14 +145,14 @@ export default function Login() {
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                           "
                 placeholder="كلمه المرور"
               />
             </div>
 
             <div className="w-full text-center my-5">
-              <button className="rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300">
+              <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300">
                 تسجيل الدخول
               </button>
             </div>

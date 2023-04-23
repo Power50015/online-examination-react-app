@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #dfdfdf;
+  background-color: #DFDFDF;
   position: relative;
   top: 0;
   bottom: 0;
@@ -39,5 +39,5 @@ body::before {
   height: 100%;
 }
 .nav {
-  background-color: #090f36da;
+  background-color: #093a19da;
 }

@@ -38,12 +38,12 @@ export default function UserCard() {
   }, []);
 
   return (
-    <div className="bg-[#09103a] text-white flex justify-between px-4 py-4 rounded-lg mb-4">
+    <div className="bg-[#093a19] text-white flex justify-between px-4 py-4 rounded-lg mb-4">
       <div className="user-img ml-3">
         <img
           src={userData.photo}
           width="135"
-          className="rounded-full border-4 border-[#3281c0]"
+          className="rounded-full border-4 border-[#28ff6e]"
           alt=""
         />
       </div>
@@ -53,7 +53,7 @@ export default function UserCard() {
         <h4>شئون طلبه</h4>
         <Link
           to="/profile"
-          className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+          className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
         >
           الصفحه الشخصيه
         </Link>

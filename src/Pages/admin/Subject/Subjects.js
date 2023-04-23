@@ -25,10 +25,10 @@ export default function Subjects() {
       <div className="w-full">
         {tabData?.map((row, i) => (
           <div
-            className="flex justify-between items-center align-middle mb-5 hover:text-blue-600 border-b border-black"
+            className="flex justify-between items-center align-middle mb-5 hover:text-green-600 border-b border-black"
             key={i}
           >
-            <div className="w-[85%] flex justify-between items-center align-middle mb-5 hover:text-blue-600 ">
+            <div className="w-[85%] flex justify-between items-center align-middle mb-5 hover:text-green-600 ">
               <h2 className="text-3xl	 font-black	">{row.name}</h2>
               <h2 className="text-2xl	 font-black	">{row.specialty}</h2>
               <h2 className="text-2xl	 font-black	">

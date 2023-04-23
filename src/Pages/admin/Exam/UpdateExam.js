@@ -152,7 +152,7 @@ export default function UpdateExam() {
 
   return (
     <div className="container mx-auto mt-4 flex justify-center flex-col	items-center">
-      <h2 className="text-[#09103A] text-center my-5  font-bold text-2xl">
+      <h2 className="text-[#093a19] text-center my-5  font-bold text-2xl">
         عمل إمتحان
       </h2>
       <div className="w-full">
@@ -172,12 +172,12 @@ export default function UpdateExam() {
               {selectedSubjectData.year === "4" && "الرابعه"}
             </span>
           </h4>
-          <h4 className="text-lg font-bold text-blue-700">
+          <h4 className="text-lg font-bold text-green-700">
             إجمالى الدرجات : <span> {totalScore()}</span>
           </h4>
           <div
             onClick={() => saveExam()}
-            className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+            className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
           >
             تسجيل الامتحان
           </div>
@@ -188,7 +188,7 @@ export default function UpdateExam() {
               <div className="my-4">{i + 1} :</div>
               <div
                 onClick={() => removeQuestion(i)}
-                className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+                className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
               >
                 X
               </div>
@@ -248,7 +248,7 @@ export default function UpdateExam() {
         ))}
         <div
           onClick={() => addQuestion()}
-          className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+          className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
         >
           أضف سوال
         </div>

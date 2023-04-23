@@ -135,9 +135,9 @@ import { useNavigate } from "react-router-dom";
   
     return (
       <div className="container mx-auto mt-4 flex justify-center flex-col	items-center">
-        <div className="FormContainer bg-[#DFDFDF] border-[#09103A] border-2 border-solid	w-1/2 rounded-lg">
+        <div className="FormContainer bg-[#DFDFDF] border-[#093a19] border-2 border-solid	w-1/2 rounded-lg">
           <div className="form px-3">
-            <h2 className="text-[#09103A] text-center my-5  font-bold text-2xl">
+            <h2 className="text-[#093a19] text-center my-5  font-bold text-2xl">
               عمل حساب شئون طلبه
             </h2>
             <form onSubmit={handleForm}>
@@ -166,7 +166,7 @@ import { useNavigate } from "react-router-dom";
                               transition
                               ease-in-out
                               m-0
-                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                              focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                             "
                   placeholder="الأسم"
                   value={userData.name}
@@ -195,7 +195,7 @@ import { useNavigate } from "react-router-dom";
                               transition
                               ease-in-out
                               m-0
-                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                              focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                             "
                   placeholder="البريد الإلكترونى"
                   value={userData.email}
@@ -224,7 +224,7 @@ import { useNavigate } from "react-router-dom";
                               transition
                               ease-in-out
                               m-0
-                              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                              focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                             "
                   placeholder="كلمه المرور"
                   value={userData.password}
@@ -234,7 +234,7 @@ import { useNavigate } from "react-router-dom";
               <div className="w-full text-center my-5">
                 <div className="w-full  max-w-sm my-12 mx-auto rounded-lg overflow-hidden ">
                   {percent == 0 || percent == 100 ? (
-                    <button className="rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300">
+                    <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300">
                       تسجيل الحساب
                     </button>
                   ) : (

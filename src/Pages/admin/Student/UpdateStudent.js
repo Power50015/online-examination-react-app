@@ -146,9 +146,9 @@ export default function UpdateStudent() {
 
   return (
     <div className="container mx-auto mt-4 flex justify-center flex-col	items-center">
-      <div className="FormContainer bg-[#DFDFDF] border-[#09103A] border-2 border-solid	w-1/2 rounded-lg">
+      <div className="FormContainer bg-[#DFDFDF] border-[#093a19] border-2 border-solid	w-1/2 rounded-lg">
         <div className="form px-3">
-          <h2 className="text-[#09103A] text-center my-5  font-bold text-2xl">
+          <h2 className="text-[#093a19] text-center my-5  font-bold text-2xl">
             عمل حساب طالب
           </h2>
           <form onSubmit={handleForm}>
@@ -156,7 +156,7 @@ export default function UpdateStudent() {
               <img
                 src={studentData.photo}
                 width="135"
-                className="rounded-full border-4 border-[#3281c0]"
+                className="rounded-full border-4 border-[#28ff6e]"
                 alt=""
               />
               <h4>{studentData.email}</h4>
@@ -186,7 +186,7 @@ export default function UpdateStudent() {
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                           "
                 placeholder="الأسم"
                 value={studentData.name}
@@ -213,7 +213,7 @@ export default function UpdateStudent() {
                             ease-in-out
                             m-0
                             specialty
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                           "
                 value={studentData.specialty}
                 onChange={handleInput}
@@ -242,7 +242,7 @@ export default function UpdateStudent() {
                             ease-in-out
                             m-0
                             
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                           "
               >
                 <option value={1}> الأولى </option>
@@ -254,7 +254,7 @@ export default function UpdateStudent() {
             <div className="w-full text-center my-5">
               <div className="w-full  max-w-sm my-12 mx-auto rounded-lg overflow-hidden ">
                 {percent === 0 || percent === 100 ? (
-                  <button className="rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300">
+                  <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300">
                     تعديل الحساب
                   </button>
                 ) : (

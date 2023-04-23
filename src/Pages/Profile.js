@@ -136,12 +136,12 @@ export default function Profile() {
   return (
     <div className="w-full">
       <div className="px-4 py-4  mb-4 flex justify-center flex-col align-middle items-center">
-        <div className="w-96 border	rounded-lg border-sky-500 px-4 py-4 bg-[#DFDFDF] flex justify-center flex-col align-middle items-center">
+        <div className="w-96 border	rounded-lg border-green-500 px-4 py-4 bg-[#DFDFDF] flex justify-center flex-col align-middle items-center">
           <div className="user-img mb-5 flex justify-center flex-col align-middle items-center">
             <img
               src={userData.photo}
               width="135"
-              className="rounded-full border-4 border-[#3281c0]"
+              className="rounded-full border-4 border-[#28ff6e]"
               alt=""
             />
             <h4>{userData.email}</h4>
@@ -169,7 +169,7 @@ export default function Profile() {
                             transition
                             ease-in-out
                             m-0
-                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none
                           "
               value={userData.name}
               onChange={handleInput}
@@ -179,7 +179,7 @@ export default function Profile() {
             <div className="flex justify-center flex-col align-middle items-center">
               <button
                 onClick={handleUpload}
-                className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-blue-500 text-blue-500 hover:bg-blue-600 hover:text-blue-100 duration-300"
+                className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
               >
                 تغير البيانات
               </button>
