@@ -228,7 +228,7 @@ export default function CreateExam() {
           </h4>
           <div
             onClick={() => saveExam()}
-            className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+            className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
           >
             تسجيل الامتحان
           </div>
@@ -239,7 +239,7 @@ export default function CreateExam() {
               <div className="my-4">{i + 1} :</div>
               <div
                 onClick={() => removeQuestion(i)}
-                className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+                className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
               >
                 X
               </div>
@@ -259,7 +259,7 @@ export default function CreateExam() {
                 </span>
               </h4>
               <h4 className="text-lg flex items-center">
-                <span className="">الدرجه </span>
+                {/* <span className="">الدرجه </span>
                 <span className="px-3">
                   <input
                     type="number"
@@ -268,7 +268,7 @@ export default function CreateExam() {
                     onChange={(e) => handleInputNumber(e, i)}
                     className="w-full  p-3"
                   />
-                </span>
+                </span> */}
               </h4>
             </div>
             <div className=" mt-3">
@@ -298,7 +298,7 @@ export default function CreateExam() {
         ))}
         <div
           onClick={() => addQuestion()}
-          className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           أضف سوال
         </div>

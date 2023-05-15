@@ -24,7 +24,8 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, form.email, form.password)
         .then((res) => {
-          history("/admin-dashborad");
+          if (userType === "admin") history("/admin-dashborad");
+          else history("/student-dashborad");
         })
         .catch((e) => {
           console.log("Login 1 - err", e);
@@ -152,7 +153,7 @@ export default function Login() {
             </div>
 
             <div className="w-full text-center my-5">
-              <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300">
+              <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300">
                 تسجيل الدخول
               </button>
             </div>

@@ -177,7 +177,7 @@ export default function UpdateExam() {
           </h4>
           <div
             onClick={() => saveExam()}
-            className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+            className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
           >
             تسجيل الامتحان
           </div>
@@ -188,7 +188,7 @@ export default function UpdateExam() {
               <div className="my-4">{i + 1} :</div>
               <div
                 onClick={() => removeQuestion(i)}
-                className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+                className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
               >
                 X
               </div>
@@ -248,7 +248,7 @@ export default function UpdateExam() {
         ))}
         <div
           onClick={() => addQuestion()}
-          className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="cursor-pointer mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           أضف سوال
         </div>

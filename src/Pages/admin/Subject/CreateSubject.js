@@ -121,7 +121,7 @@ export default function CreateSubject() {
             </div>
             <div className="w-full text-center my-5">
               <div className="w-full  max-w-sm my-12 mx-auto rounded-lg overflow-hidden ">
-                <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300">
+                <button className="rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300">
                   تسجيل المادة
                 </button>
               </div>

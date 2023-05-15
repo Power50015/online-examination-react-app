@@ -137,7 +137,7 @@ export default function UpdateExam() {
               {row.asn?.map((anRow, i2) => (
                 <div className="mb-3 flex" key={i2}>
                   {i2 === row.trueAns * 1 ? (
-                    <div className="text-green-500 w-full bg-slate-500 p-3">{anRow}</div>
+                    <div className="text-white w-full bg-slate-500 p-3">{anRow}</div>
                   ) : (
                     <div className="w-full bg-slate-300 p-3">{anRow}</div>
                   )}

@@ -10,14 +10,6 @@ export default function Dashborad() {
     <div className="container mx-auto mt-4 flex justify-between">
       <div className="w-1/3 px-3 flex justify-between flex-col">
         <UserCard />
-        <AdminBox />
-      </div>
-      <div className="w-1/3 px-3">
-        <SubjectBox />
-      </div>
-      <div className="w-1/3 px-3">
-        <StudentBox />
-        <ExamsBox />
       </div>
     </div>
   );

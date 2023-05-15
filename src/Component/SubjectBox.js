@@ -38,13 +38,13 @@ export default function SubjectBox() {
       <div className="w-full text-center my-5 flex flex-col">
         <Link
           to="/create-subjects"
-          className="mb-4 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="mb-4 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           إضافه مادة
         </Link>
         <Link
           to="/subjects"
-          className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           معاينه المواد
         </Link>

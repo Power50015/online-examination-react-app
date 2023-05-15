@@ -30,13 +30,13 @@ export default function AdminBox() {
       <div className="w-full text-center my-5 flex flex-col">
         <Link
           to="/admins"
-          className="mb-4 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="mb-4 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           معاينه شئون الطالبه
         </Link>
         <Link
           to="/create-admins"
-          className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           إضافة شئون الطالبه
         </Link>

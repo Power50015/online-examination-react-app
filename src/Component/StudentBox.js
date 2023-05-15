@@ -33,13 +33,13 @@ export default function StudentBox() {
       <div className="w-full text-center my-5 flex flex-col pt-5">
         <Link
           to="/students"
-          className="mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           معاينه الطلاب
         </Link>
         <Link
           to="/create-student"
-          className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           إضافة طالب
         </Link>

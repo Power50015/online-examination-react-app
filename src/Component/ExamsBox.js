@@ -32,13 +32,13 @@ export default function ExamsBox() {
       <div className="w-full text-center my-5 flex flex-col pt-5">
         <Link
           to="/exams"
-          className="mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="mb-2 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           معاينه الإمتحنات
         </Link>
         <Link
           to="/create-exams"
-          className="rounded-lg px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-600 hover:text-green-100 duration-300"
+          className="rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           إضافة إمتحان
         </Link>
