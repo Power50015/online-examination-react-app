@@ -22,6 +22,7 @@ import ReadExam from "./Pages/admin/Exam/ReadExam";
 import UpdateExam from "./Pages/admin/Exam/UpdateExam";
 //Student Login
 import StudentDashborad from "./Pages/Student/Dashborad";
+import StudentExam from "./Pages/Student/Exam/Show";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
   {
     path: "/student-dashborad",
     element: <StudentDashborad />,
+  },
+  {
+    path: "/student-exam/:examId",
+    element: <StudentExam />,
   },
 ]);
 

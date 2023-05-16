@@ -73,15 +73,15 @@ export default function UserCard() {
         <h4>{userData.name}</h4>
         <h4>{userData.email}</h4>
         <h4>{userData.specialty}</h4>
-        {userData.year ? (<h4> الفرقه : {userData.year}</h4>):("")}
-        {userData.year ? (<h4>الطالب</h4>):(<h4>شئون طلبه</h4>)}
-        
-        <Link
+        {userData.year ? (<h4> الفرقه : {userData.year}</h4>) : ("")}
+        {userData.year ? (<h4>الطالب</h4>) : (<h4>شئون طلبه</h4>)}
+
+        {userData.year ? ("") : (<Link
           to="/profile"
           className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
         >
           الصفحه الشخصيه
-        </Link>
+        </Link>)}
       </div>
     </div>
   );
