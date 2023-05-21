@@ -51,25 +51,9 @@ export default function Navbar() {
       <div className="container mx-auto">
         <div className="flex justify-between items-center ">
           <div className="logo">
-            {isLoading ? (
-              isLogin ? (
-                setIsStudent ? (
-                  <a href="/student-dashborad">
-                    <img src={logo} alt="logo" width="100" />
-                  </a>
-                ) : (
-                  <a href="/admin-dashborad">
-                    <img src={logo} alt="logo" width="100" />
-                  </a>
-                )
-              ) : (
-                <a href="/">
-                  <img src={logo} alt="logo" width="100" />
-                </a>
-              )
-            ) : (
-              ""
-            )}
+            <a href="/">
+              <img src={logo} alt="logo" width="100" />
+            </a>
           </div>
           <div className="btns ">
             {isLoading ? (

@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./Layouts/Navbar";
+import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import AdminDashborad from "./Pages/admin/Dashborad";
 import Profile from "./Pages/Profile";
@@ -27,7 +28,7 @@ import StudentExam from "./Pages/Student/Exam/Show";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Home />,
   },
   {
     path: "/login",
