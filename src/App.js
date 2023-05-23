@@ -24,6 +24,7 @@ import UpdateExam from "./Pages/admin/Exam/UpdateExam";
 //Student Login
 import StudentDashborad from "./Pages/Student/Dashborad";
 import StudentExam from "./Pages/Student/Exam/Show";
+import StudentCertificate from "./Pages/Student/Exam/Certificate";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
   {
     path: "/student-exam/:examId",
     element: <StudentExam />,
+  },
+  {
+    path: "/student-certificate/:examId",
+    element: <StudentCertificate />,
   },
 ]);
 

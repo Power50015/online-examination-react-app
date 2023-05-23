@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
-  getFirestore,
-  query,
-  getDocs,
   collection,
+  getDocs,
+  getFirestore,
   where,
-  doc,
-  updateDoc,
+  query,
 } from "firebase/firestore";
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
 
 export default function ReadStudent() {
   const { stuId } = useParams();
 
   const db = getFirestore();
+  const [tabData, setTabData] = useState([]);
+  const [tabData2, setTabData2] = useState([]);
 
   const [studentData, setStudentData] = useState({
     id: "",
@@ -45,6 +39,34 @@ export default function ReadStudent() {
         year: doc.data().year,
       });
     });
+
+    const q2 = query(
+      collection(db, "studExams"),
+      where("stuId", "==", stuId)
+    );
+
+    const docs2 = await getDocs(q2);
+    const ids2 = [];
+    docs2.forEach((doc) => {
+      ids2.push(doc.data().subjecId);
+    });
+
+    const q3 = query(
+      collection(db, "exams")
+    );
+    
+    const docs3 = await getDocs(q3);
+    const newData2 = [];
+    const newData3 = [];
+    const ids3 = [];
+    docs3.forEach((doc) => {
+      ids3.push(doc.id);
+      if (ids2.includes(doc.data().subjecId)) newData2.push(doc.data());
+      else newData3.push(doc.data());
+    });
+
+    setTabData(newData3);
+    setTabData2(newData2);
   };
 
   useEffect(() => getData, []);
@@ -76,6 +98,24 @@ export default function ReadStudent() {
               {studentData.year === "4" && <span>الرابعه</span>}
             </h4>
           </div>
+        </div>
+      </div>
+      <div>
+      <h4>نتائج الإمتحنات التى تم امتحانها</h4>
+        <div className="grid grid-cols-4	">
+          {tabData2?.map((row, i) => (
+            <div
+              className="flex justify-between items-center align-middle py-3 hover:text-green-600   basis-1/4 mx-3"
+              key={i}
+            >
+              <Link
+                to={`/student-certificate/${row.subjecId}`}
+                className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-white bg-green-500 text-white  hover:text-green-100 duration-300"
+              >
+                {row.subjectName}
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
