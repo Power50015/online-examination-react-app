@@ -24,8 +24,8 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, form.email, form.password)
         .then((res) => {
-          if (userType === "admin") history("/");
-          else history("/");
+          if (userType === "admin") history("/login");
+          else history("/login");
         })
         .catch((e) => {
           console.log("Login 1 - err", e);

@@ -13,6 +13,10 @@ import AdminDashborad from "./admin/Dashborad";
 import StudentDashborad from "./Student/Dashborad";
 
 export default function Navbar() {
+  function redir() {
+    return (window.location.href = "/login");
+  }
+
   const db = getFirestore();
   const auth = getAuth(firebase);
   const [isLogin, setIsLogin] = useState(false);
@@ -21,7 +25,7 @@ export default function Navbar() {
   function logout() {
     return signOut(auth)
       .then((res) => {
-        window.location.href = "/";
+        window.location.href = "/login";
       })
       .catch((e) => {
         console.log("Nav - err", e);
@@ -56,7 +60,7 @@ export default function Navbar() {
               <StudentDashborad />
             )
           ) : (
-            "غير مسجل"
+            redir()
           )
         ) : (
           "غير مسجل"

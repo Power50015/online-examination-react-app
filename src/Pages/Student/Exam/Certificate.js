@@ -85,8 +85,8 @@ export default function UpdateExam() {
         </div>
       </div>
       <div className="container mx-auto mt-4 flex justify-center	">
-        <div className="w-full flex justify-center">
-          <div className="w-1/3 px-3 flex-col">
+        <div className="w-full flex justify-center ">
+          <div className="w-1/3 px-3 flex-col border-[#093a19] border-4 p-3">
             <h2 className="font-bold">
               الطالب : {selectedSubjectData.stuName}
             </h2>
