@@ -39,10 +39,10 @@ export default function Students() {
                 className="rounded-full border-4 border-[#093a19] w-[100px] h-[100px]"
                 alt=""
               />
-              <h2 className="text-2xl	 font-black	">{row.name}</h2>
-              <h2 className="text-2xl	 font-black	">{row.email}</h2>
-              <h2 className="text-2xl	 font-black	">{row.specialty}</h2>
-              <h2 className="text-2xl	 font-black	">
+              <h2 className="text-2xl	 font-black	w-1/6 text-center">{row.name}</h2>
+              <h2 className="text-2xl	 font-black	w-2/6 text-center">{row.email}</h2>
+              <h2 className="text-2xl	 font-black	w-1/6 text-center">{row.specialty}</h2>
+              <h2 className="text-2xl	 font-black	w-2/6 text-center">
                 الفرقه :{row.year === '1' && <span>الأولى</span>}
                 {row.year === '2' && <span>الثانيه</span>}
                 {row.year === '3' && <span>الثالثه</span>}
@@ -51,7 +51,7 @@ export default function Students() {
             </Link>
             <Link
               to={"/update-students/" + row.uid}
-              className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
+              className="w-1/6 mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
             >
               تعديل البيانات
             </Link>

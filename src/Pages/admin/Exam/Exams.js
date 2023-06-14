@@ -33,19 +33,19 @@ export default function Exams() {
               to={`/exam/${row.subjecId}`}
               className="w-[85%] flex justify-between items-center align-middle hover:text-green-600 "
             >
-              <h2 className="text-2xl	 font-black	">المادة : {row.subjectName}</h2>
-              <h2 className="text-2xl	 font-black	">الشعبه : {row.subjectSpecialty}</h2>
-              <h2 className="text-2xl	 font-black	">
+              <h2 className="text-2xl	 font-black	w-1/5">المادة : {row.subjectName}</h2>
+              <h2 className="text-2xl	 font-black	w-1/5">الشعبه : {row.subjectSpecialty}</h2>
+              <h2 className="text-2xl	 font-black	w-1/5">
                 الفرقه :{row.subjectYear === '1' && <span>الأولى</span>}
                 {row.subjectYear === '2' && <span>الثانيه</span>}
                 {row.subjectYear === '3' && <span>الثالثه</span>}
                 {row.subjectYear === '4' && <span>الرابعه</span>}
               </h2>
-              <h2 className="text-2xl	 font-black	">مجموع الدرجات : {row.totalScore}</h2>
+              <h2 className="text-2xl	 font-black	w-1/5">مجموع الدرجات : {row.totalScore}</h2>
             </Link>
             <Link
               to={"/update-exam/" + row.subjecId}
-              className="mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
+              className="w-1/5 mb-4 mt-3 rounded-lg px-4 py-2 border-2 border-green-500 text-white hover:bg-green-600 hover:text-green-100 duration-300"
             >
               تعديل البيانات
             </Link>

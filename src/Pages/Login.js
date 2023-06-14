@@ -52,36 +52,7 @@ export default function Login() {
       <div className="text-right w-full my-5">
         <h2 className="text-[#28ff6e] font-bold text-3xl">تسجيل الدخول</h2>
       </div>
-      <div className="btns flex justify-center mb-5">
-        <div
-          className={`
-          btn
-          mx-3
-          text-lg
-          font-bold px-5 cursor-pointer rounded-lg py-2 border-2 border-[#28ff6e] bg-[#093a19]
-          ${userType === "student" ? "text-[#28ff6e]" : "text-white"}
-           duration-300`}
-          onClick={() => {
-            setUserType("student");
-          }}
-        >
-          طالب
-        </div>
-        <div
-          className={`
-          btn
-          mx-3
-          text-lg
-          font-bold px-5 cursor-pointer rounded-lg py-2 border-2 border-[#28ff6e] bg-[#093a19]
-          ${userType === "admin" ? "text-[#28ff6e]" : "text-white"}
-           duration-300`}
-          onClick={() => {
-            setUserType("admin");
-          }}
-        >
-          شئون الطلبة
-        </div>
-      </div>
+
       <div className="FormContainer bg-[#DFDFDF] border-[#093a19] border-2 border-solid	w-1/2 rounded-lg">
         <div className="flex justify-center items-center bg-[#093a19] py-4">
           <Link to="/">

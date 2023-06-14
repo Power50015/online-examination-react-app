@@ -29,9 +29,9 @@ export default function Subjects() {
             key={i}
           >
             <div className="w-[85%] flex justify-between items-center align-middle mb-5 hover:text-green-600 ">
-              <h2 className="text-3xl	 font-black	">{row.name}</h2>
-              <h2 className="text-2xl	 font-black	">{row.specialty}</h2>
-              <h2 className="text-2xl	 font-black	">
+              <h2 className="text-3xl	 font-black	w-1/3 text-right">{row.name}</h2>
+              <h2 className="text-2xl	 font-black	w-1/3 text-center">{row.specialty}</h2>
+              <h2 className="text-2xl	 font-black	w-1/3 text-left">
                 الفرقه :{row.year === "1" && <span>الأولى</span>}
                 {row.year === "2" && <span>الثانيه</span>}
                 {row.year === "3" && <span>الثالثه</span>}
